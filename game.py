@@ -1,4 +1,6 @@
 import random
+import os
+os.system('cls')
 
 
 tipai = ['♠️', '♥️', '♦️', '♣️']
@@ -17,6 +19,7 @@ for tipas in tipai:
 maisyti = input('Ar norite išmaišyti kaladę?: ')
 
 if maisyti == "taip":
+    os.system('cls')
     random.shuffle(kalade)
     print(kalade)
 elif maisyti == "ne":
@@ -34,6 +37,7 @@ while True:
 
         nauja_kalade.append(kortos2)
         kortu_likutis = len(kalade)
+        os.system('cls')
         print('Kortų liko', kortu_likutis)
         print(kortos2)
         if not kalade: 
