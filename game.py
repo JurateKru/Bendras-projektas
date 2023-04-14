@@ -29,6 +29,8 @@ while True:
 
     if response == "taip":
         kortos2 = kalade.pop()
+        kortu_likutis = len(kalade)
+        print('Kortų liko', kortu_likutis)
         print(kortos2)
         if not kalade: 
             print('Baigėsi kortos')
