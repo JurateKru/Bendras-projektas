@@ -11,9 +11,9 @@ kortos = {'A': 14, '2': 2, '3': 3, '4': 4, '5': 5, '6': 6, '7': 7, '8': 8, '9': 
 kalade = []
 
 for tipas in tipai:     ## priskiriame kortoms simbolius
-    for korta1 in kortos:
-        korta1 = korta1 + tipas
-        kalade.append(korta1)
+    for korta in kortos:
+        korta = korta + tipas
+        kalade.append(korta)
 
 maisyti = input('Ar norite išmaišyti kaladę?: ')
 maisyti = maisyti.lower()   ## atsakymą padarome mažosiomis raidėmis, kad sutaptų su turimais pasirinkimais
@@ -27,36 +27,36 @@ elif maisyti == "ne":
 else:
     print('Įvedėte netinkamą atsakymą')
 
-nauja_kalade = [] ## Ištrauktos kortos
+istrauktos_kortos = [] ## Ištrauktos kortos
 
 while True: ## kol sąlyga tenkina, traukiama korta
     response = input("Ar norite traukti kortą: ")
     response = response.lower()
 
     if response == "taip":
-        kortos2 = kalade.pop()
-        kortos3 = kalade.pop()
+        zaidejo_korta = kalade.pop()
+        kompiuterio_korta = kalade.pop()
 
-        nauja_kalade.append(kortos2)    ## prideda ištrauktą kortą į sarašą
+        istrauktos_kortos.append(zaidejo_korta)    ## prideda ištrauktą kortą į sarašą
         kortu_likutis = len(kalade) ## atspausdinamas likęs kortų sarašas
         os.system('cls')    ## išvalo terminalą
         print('Kortų liko', kortu_likutis)
-        print(f"Mūsų ištraukta korta: {kortos2}")
-        print(f"Kompiuterio ištraukta korta: {kortos3}")
+        print(f"Mūsų ištraukta korta: {zaidejo_korta}")
+        print(f"Kompiuterio ištraukta korta: {kompiuterio_korta}")
 
-        if kortos2[0] == kortos3[0]:
+        if zaidejo_korta[0] == kompiuterio_korta[0]:
             print('Lygiosios')
-        elif kortos2[0] < kortos3[0]:
+        elif zaidejo_korta[0] < kompiuterio_korta[0]:
             print('Jūs pralaimėjote')
-        elif kortos2[0] > kortos3[0]:
+        elif zaidejo_korta[0] > kompiuterio_korta[0]:
             print('Jūs laimėjote')
 
         if not kalade: ## jeigu baigiasi kortos, ciklas nutrūksta ir atspausdina eilutę su tekstu "baigėsi kortos"
             print('Baigėsi kortos')
-            print(nauja_kalade)
+            print(istrauktos_kortos)
             break
     else:   ## atspausdina visas ištrauktas kortas
-        print("Nauja ištraukta kaladė", nauja_kalade)
+        print("Ištrauktos kortos: ", istrauktos_kortos)
         break
 
 
