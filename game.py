@@ -17,6 +17,7 @@ for tipas in tipai:
         kalade.append(korta1)
 
 maisyti = input('Ar norite išmaišyti kaladę?: ')
+maisyti = maisyti.lower()
 
 if maisyti == "taip":
     os.system('cls')
@@ -31,6 +32,7 @@ nauja_kalade = []
 
 while True:
     response = input("Ar norite traukti kortą: ")
+    response = response.lower()
 
     if response == "taip":
         kortos2 = kalade.pop()
